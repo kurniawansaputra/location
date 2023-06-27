@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SingleLocationActivity">
+
+    <TextView
+        android:id="@+id/textCurrentLatLng"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/fetching_latlng"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textDestinationLatLng"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/fetching_latlng"
+        app:layout_constraintEnd_toEndOf="@+id/textCurrentLatLng"
+        app:layout_constraintStart_toStartOf="@+id/textCurrentLatLng"
+        app:layout_constraintTop_toBottomOf="@+id/textCurrentLatLng" />
+
+    <TextView
+        android:id="@+id/textDistance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/calculating"
+        app:layout_constraintEnd_toEndOf="@+id/textDestinationLatLng"
+        app:layout_constraintStart_toStartOf="@+id/textDestinationLatLng"
+        app:layout_constraintTop_toBottomOf="@+id/textDestinationLatLng" />
+
+    <Button
+        android:id="@+id/buttonDistance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/distance"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/textDistance"
+        app:layout_constraintStart_toStartOf="@+id/textDistance"
+        app:layout_constraintTop_toBottomOf="@+id/textDistance"
+        tools:ignore="VisualLintButtonSize" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

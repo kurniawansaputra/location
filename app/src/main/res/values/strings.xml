@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Location</string>
+    <string name="fetching_latlng">Fetching LatLng..</string>
+    <string name="calculating">Calculating..</string>
+    <string name="distance">Distance</string>
+    <string name="single_location">Single Location</string>
+    <string name="multiple_location">Multiple Location</string>
+    <string name="title_activity_multiple_location">MultipleLocationActivity</string>
+</resources>
