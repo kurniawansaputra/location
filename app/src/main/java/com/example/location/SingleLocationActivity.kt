@@ -14,7 +14,7 @@ class SingleLocationActivity : AppCompatActivity() {
     private var currentLng: Double = 0.0
     private var destinationLat: Double = -7.6793076
     private var destinationLng: Double = 109.6671484
-    private var distanceInKm: String = ""
+    private var distanceInKm: Int = 0
 
     private lateinit var binding: ActivitySingleLocationBinding
 
@@ -54,7 +54,7 @@ class SingleLocationActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun setDetail() {
-        distanceInKm = getDistanceInKm(currentLat, currentLng, destinationLat, destinationLng)
+        distanceInKm = getDistanceInKm(currentLat, currentLng, destinationLat, destinationLng).toInt()
 
         binding.apply {
             textCurrentLatLng.text = "Current LatLng: $currentLat, $currentLng"
@@ -73,7 +73,7 @@ class SingleLocationActivity : AppCompatActivity() {
 
     private fun validateInput() {
         binding.apply {
-            buttonDistance.isEnabled = distanceInKm <= 0.3.toString() && currentLat != 0.0 && currentLng != 0.0
+            buttonDistance.isEnabled = distanceInKm <= 0.3 && currentLat != 0.0 && currentLng != 0.0
         }
     }
 }
