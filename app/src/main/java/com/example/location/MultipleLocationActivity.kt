@@ -59,6 +59,7 @@ class MultipleLocationActivity : AppCompatActivity() {
         distanceList.clear()
 
         val distanceStringBuilder = StringBuilder()
+        val stringBuilder = StringBuilder()
 
         for (i in destinationLatList.indices) {
             val destinationLat = destinationLatList[i]
@@ -75,9 +76,18 @@ class MultipleLocationActivity : AppCompatActivity() {
             validateInput()
         }
 
+        // Iterate over the latitude and longitude lists
+        for (i in destinationLatList.indices) {
+            val latitude = destinationLatList[i]
+            val longitude = destinationLngList[i]
+
+            // Append the formatted coordinates to the StringBuilder
+            stringBuilder.append("Destination LatLng ${i+1}: $latitude, $longitude\n")
+        }
+
         binding.apply {
             textCurrentLatLng.text = "Current LatLng: $currentLat, $currentLng"
-//            textDestinationLatLng.text = "Destination LatLng: $destinationLat, $destinationLng"
+            textDestinationLatLng.text = stringBuilder
             textDistance.text = distanceStringBuilder
         }
     }
