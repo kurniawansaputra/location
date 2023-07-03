@@ -32,7 +32,7 @@ class MultipleLocationActivity : AppCompatActivity() {
         val builder = LocationParams.Builder()
             .setAccuracy(LocationAccuracy.HIGH)
             .setDistance(0f)
-            .setInterval(5000)
+            .setInterval(2000)
 
         SmartLocation.with(this)
             .location()
@@ -43,8 +43,8 @@ class MultipleLocationActivity : AppCompatActivity() {
                 currentLat = it.latitude
                 currentLng = it.longitude
 
-                validateInput()
                 setDetail()
+                validateInput()
             }
     }
 
